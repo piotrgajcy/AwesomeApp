@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using AutoMapper;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using AwesomeApp.WebAPI.Models;
+using AwesomeApp.WebAPI.Dtos;
 
 namespace AwesomeApp.WebAPI.Controllers
 {
@@ -18,9 +20,10 @@ namespace AwesomeApp.WebAPI.Controllers
         private AwesomeAppWebAPIContext db = new AwesomeAppWebAPIContext();
 
         // GET: api/Todos
-        public IQueryable<Todo> GetTodoes()
+        public IHttpActionResult GetTodoes()
         {
-            return db.Todoes;
+            var TodoDtos = db.Todoes.ToList().Select(Mapper.Map<Todo, TodoDto>);
+            return Ok(TodoDtos);
         }
 
         // GET: api/Todos/5
@@ -33,7 +36,7 @@ namespace AwesomeApp.WebAPI.Controllers
                 return NotFound();
             }
 
-            return Ok(todo);
+            return Ok(Mapper.Map<Todo, TodoDto>(todo));
         }
 
         // PUT: api/Todos/5
@@ -73,13 +76,15 @@ namespace AwesomeApp.WebAPI.Controllers
 
         // POST: api/Todos
         [ResponseType(typeof(Todo))]
-        public async Task<IHttpActionResult> PostTodo(Todo todo)
+        public async Task<IHttpActionResult> PostTodo(TodoDto todoDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
+            var todo = Mapper.Map<TodoDto, Todo>(todoDto);
+            todo.DateAdded = DateTime.Now;
             db.Todoes.Add(todo);
 
             try
@@ -88,7 +93,7 @@ namespace AwesomeApp.WebAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (TodoExists(todo.Id))
+                if (TodoExists(todoDto.Id))
                 {
                     return Conflict();
                 }

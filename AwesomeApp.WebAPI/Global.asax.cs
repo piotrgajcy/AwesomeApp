@@ -1,9 +1,11 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
+using AwesomeApp.WebAPI.App_Start;
 
 namespace AwesomeApp.WebAPI
 {
@@ -11,6 +13,7 @@ namespace AwesomeApp.WebAPI
     {
         protected void Application_Start()
         {
+            Mapper.Initialize(t => t.AddProfile<MappingProfile>());
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
