@@ -21386,7 +21386,6 @@
     <Content Include="todos\src\App.test.js" />
     <Content Include="todos\src\index.css" />
     <Content Include="todos\src\index.js" />
-    <Content Include="todos\src\logo.svg" />
     <Content Include="todos\src\registerServiceWorker.js" />
     <Content Include="Web.config" />
   </ItemGroup>
