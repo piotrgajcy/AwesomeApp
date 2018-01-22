@@ -4,8 +4,8 @@ import axios from 'axios';
 
 class AdTask extends Component {
   state = {
-    title: '',
-    description: ''
+    title: 'Add task',
+    description: 'Add description'
   }
 
   postDataHandler = () => {
@@ -23,11 +23,13 @@ class AdTask extends Component {
     return (
       <div>
         <input 
-          type="text" value={this.state.title} 
-          onChange={(event) => this.setState({title: event.target.value})} />
-          <input 
+          type="text" value={this.state.title}
+          onChange={(event) => this.setState({title: event.target.value})}
+          onClick={(event) => this.setState({title: ''})} />
+        <input 
           type="text" value={this.state.description} 
-          onChange={(event) => this.setState({description: event.target.value})} />
+          onChange={(event) => this.setState({description: event.target.value})}
+          onClick={(event) => this.setState({description: ''})} />
         <button onClick={this.postDataHandler}>Add task</button>
       </div>
     )
