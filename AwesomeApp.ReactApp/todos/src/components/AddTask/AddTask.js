@@ -5,21 +5,37 @@ import classes from './AddTask.css';
 
 class AddTask extends Component {
   state = {
-    title: 'Add task',
-    description: 'Add description'
+    dateAdded: '',
+    description: '',
+    id: 2,
+    isCompleted: false,
+    title: 'test'
   }
 
   postDataHandler = () => {
     const data = {
-      title: this.state.title,
-      description: this.state.description
+      // title: this.state.title,
+      // description: this.state.description,
+      title: "dsadadsa",
+      dateAdded: "",
+      description: "",
+      id: 3,
+      isCompleted: false,
+    
     }
-    axios.post('http://localhost:59967/api/todos' ,data)
+    axios.post('http://localhost:59967/api/todos', data, 
+    {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    //JSON.stringify(data)
+  )
       .then(response => {
-        console.log(response);
+        console.log(JSON.stringify(data));
       })
       .catch(error => {
-        console.log(error);
+        console.log(error, JSON.stringify(data));
       });
   }
 
