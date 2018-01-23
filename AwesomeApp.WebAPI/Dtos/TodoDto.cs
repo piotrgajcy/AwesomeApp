@@ -9,7 +9,7 @@ namespace AwesomeApp.WebAPI.Dtos
 {
     public class TodoDto
     {
-        public byte Id { get; set; }
+        public int Id { get; set; }
 
         [JsonProperty(PropertyName = "title")]
         [StringLength(250), Required]
@@ -20,7 +20,7 @@ namespace AwesomeApp.WebAPI.Dtos
         public string Description { get; set; }
 
         [JsonProperty(PropertyName = "dateAdded")]
-        public DateTime DateAdded { get; set; }
+        public DateTime? DateAdded { get; set; }
 
         [JsonProperty(PropertyName = "isCompleted")]
         public bool IsCompleted { get; set; }

@@ -8,7 +8,7 @@ namespace AwesomeApp.WebAPI.Models
 {
     public class Todo
     {
-        public byte Id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(250), Required]
         public string Title { get; set; }
@@ -16,7 +16,7 @@ namespace AwesomeApp.WebAPI.Models
         [StringLength(500)]
         public string Description { get; set; }
 
-        public DateTime DateAdded { get; set; }
+        public DateTime? DateAdded { get; set; }
 
         public bool IsCompleted { get; set; }
     }

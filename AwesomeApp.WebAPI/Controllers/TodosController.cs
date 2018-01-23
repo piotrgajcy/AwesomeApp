@@ -28,7 +28,7 @@ namespace AwesomeApp.WebAPI.Controllers
 
         // GET: api/Todos/5
         [ResponseType(typeof(Todo))]
-        public async Task<IHttpActionResult> GetTodo(byte id)
+        public async Task<IHttpActionResult> GetTodo(int id)
         {
             Todo todo = await db.Todoes.FindAsync(id);
             if (todo == null)
@@ -41,7 +41,7 @@ namespace AwesomeApp.WebAPI.Controllers
 
         // PUT: api/Todos/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutTodo(byte id, Todo todo)
+        public async Task<IHttpActionResult> PutTodo(int id, Todo todo)
         {
             if (!ModelState.IsValid)
             {
@@ -76,6 +76,7 @@ namespace AwesomeApp.WebAPI.Controllers
 
         // POST: api/Todos
         [ResponseType(typeof(Todo))]
+        [HttpPost]
         public async Task<IHttpActionResult> PostTodo(TodoDto todoDto)
         {
             if (!ModelState.IsValid)
@@ -108,7 +109,7 @@ namespace AwesomeApp.WebAPI.Controllers
 
         // DELETE: api/Todos/5
         [ResponseType(typeof(Todo))]
-        public async Task<IHttpActionResult> DeleteTodo(byte id)
+        public async Task<IHttpActionResult> DeleteTodo(int id)
         {
             Todo todo = await db.Todoes.FindAsync(id);
             if (todo == null)
@@ -131,7 +132,7 @@ namespace AwesomeApp.WebAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool TodoExists(byte id)
+        private bool TodoExists(int id)
         {
             return db.Todoes.Count(e => e.Id == id) > 0;
         }

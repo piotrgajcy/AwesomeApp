@@ -19,7 +19,6 @@ class AddTask extends Component {
       title: "dsadadsa",
       dateAdded: "",
       description: "",
-      id: 3,
       isCompleted: false,
     
     }

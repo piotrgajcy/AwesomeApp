@@ -106,6 +106,14 @@
     <Compile Include="Migrations\201801212142530_InitialModel.Designer.cs">
       <DependentUpon>201801212142530_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801232128594_AddedNullHandlingToDateTime.cs" />
+    <Compile Include="Migrations\201801232128594_AddedNullHandlingToDateTime.Designer.cs">
+      <DependentUpon>201801232128594_AddedNullHandlingToDateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801232209408_ConvertIdByteToInt.cs" />
+    <Compile Include="Migrations\201801232209408_ConvertIdByteToInt.Designer.cs">
+      <DependentUpon>201801232209408_ConvertIdByteToInt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AwesomeAppWebAPIContext.cs" />
     <Compile Include="Models\Todo.cs" />
@@ -126,6 +134,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801212142530_InitialModel.resx">
       <DependentUpon>201801212142530_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801232128594_AddedNullHandlingToDateTime.resx">
+      <DependentUpon>201801232128594_AddedNullHandlingToDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801232209408_ConvertIdByteToInt.resx">
+      <DependentUpon>201801232209408_ConvertIdByteToInt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
