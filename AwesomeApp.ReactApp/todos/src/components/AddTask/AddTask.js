@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import classes from './AddTask.css';
 
-class AdTask extends Component {
+class AddTask extends Component {
   state = {
     title: 'Add task',
     description: 'Add description'
@@ -13,20 +14,25 @@ class AdTask extends Component {
       title: this.state.title,
       description: this.state.description
     }
-    axios.post('https://jsonplaceholder.typicode.com/posts' ,data)
+    axios.post('http://localhost:59967/api/todos' ,data)
       .then(response => {
         console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
       });
   }
 
   render () {
     return (
       <div>
-        <input 
+        <input
+          className={classes.AddTask} 
           type="text" value={this.state.title}
           onChange={(event) => this.setState({title: event.target.value})}
           onClick={(event) => this.setState({title: ''})} />
         <input 
+          className={classes.AddTask} 
           type="text" value={this.state.description} 
           onChange={(event) => this.setState({description: event.target.value})}
           onClick={(event) => this.setState({description: ''})} />
@@ -36,4 +42,4 @@ class AdTask extends Component {
   } 
 }
 
-export default AdTask;
+export default AddTask;

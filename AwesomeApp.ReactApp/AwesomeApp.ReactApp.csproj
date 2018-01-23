@@ -69,6 +69,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="todos\config\env.js" />
+    <Content Include="todos\config\jest\cssTransform.js" />
+    <Content Include="todos\config\jest\fileTransform.js" />
+    <Content Include="todos\config\paths.js" />
+    <Content Include="todos\config\polyfills.js" />
+    <Content Include="todos\config\webpack.config.dev.js" />
+    <Content Include="todos\config\webpack.config.prod.js" />
+    <Content Include="todos\config\webpackDevServer.config.js" />
     <Content Include="todos\node_modules\.bin\acorn" />
     <Content Include="todos\node_modules\.bin\acorn.cmd" />
     <Content Include="todos\node_modules\.bin\ansi-html" />
@@ -21381,9 +21389,20 @@
     <Content Include="todos\node_modules\yargs\yargs.js" />
     <Content Include="todos\public\favicon.ico" />
     <Content Include="todos\public\index.html" />
+    <Content Include="todos\scripts\build.js" />
+    <Content Include="todos\scripts\start.js" />
+    <Content Include="todos\scripts\test.js" />
     <Content Include="todos\src\App.css" />
     <Content Include="todos\src\App.js" />
     <Content Include="todos\src\App.test.js" />
+    <Content Include="todos\src\components\AdTask\AdTask.css" />
+    <Content Include="todos\src\components\AdTask\AdTask.js" />
+    <Content Include="todos\src\components\ToDoCards\ToDoCards.css" />
+    <Content Include="todos\src\components\ToDoCards\ToDoCards.js" />
+    <Content Include="todos\src\components\ToDoCard\ToDoCard.css" />
+    <Content Include="todos\src\components\ToDoCard\ToDoCard.js" />
+    <Content Include="todos\src\containers\toDoList\ToDoList.css" />
+    <Content Include="todos\src\containers\toDoList\ToDoList.js" />
     <Content Include="todos\src\index.css" />
     <Content Include="todos\src\index.js" />
     <Content Include="todos\src\registerServiceWorker.js" />
