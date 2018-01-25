@@ -3,27 +3,27 @@ namespace AwesomeApp.WebAPI.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialModel : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.Todoes",
+                "dbo.Todos",
                 c => new
                     {
-                        Id = c.Byte(nullable: false),
+                        ID = c.Int(nullable: false, identity: true),
                         Title = c.String(nullable: false, maxLength: 250),
                         Description = c.String(maxLength: 500),
-                        DateAdded = c.DateTime(nullable: false),
+                        DateAdded = c.DateTime(),
                         IsCompleted = c.Boolean(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.ID);
             
         }
         
         public override void Down()
         {
-            DropTable("dbo.Todoes");
+            DropTable("dbo.Todos");
         }
     }
 }

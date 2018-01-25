@@ -48,7 +48,7 @@ namespace AwesomeApp.WebAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != todo.Id)
+            if (id != todo.ID)
             {
                 return BadRequest();
             }
@@ -94,7 +94,7 @@ namespace AwesomeApp.WebAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (TodoExists(todoDto.Id))
+                if (TodoExists(todoDto.ID))
                 {
                     return Conflict();
                 }
@@ -104,7 +104,7 @@ namespace AwesomeApp.WebAPI.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = todo.Id }, todo);
+            return CreatedAtRoute("DefaultApi", new { id = todo.ID }, todo);
         }
 
         // DELETE: api/Todos/5
@@ -134,7 +134,7 @@ namespace AwesomeApp.WebAPI.Controllers
 
         private bool TodoExists(int id)
         {
-            return db.Todoes.Count(e => e.Id == id) > 0;
+            return db.Todoes.Count(e => e.ID == id) > 0;
         }
     }
 }

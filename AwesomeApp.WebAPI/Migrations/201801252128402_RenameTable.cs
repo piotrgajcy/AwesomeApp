@@ -3,16 +3,16 @@ namespace AwesomeApp.WebAPI.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddedNullHandlingToDateTime : DbMigration
+    public partial class RenameTable : DbMigration
     {
         public override void Up()
         {
-            AlterColumn("dbo.Todoes", "DateAdded", c => c.DateTime());
+            RenameTable("Todos", "Todoes");
         }
         
         public override void Down()
         {
-            AlterColumn("dbo.Todoes", "DateAdded", c => c.DateTime(nullable: false));
+            RenameTable("Todos", "Todoes");
         }
     }
 }

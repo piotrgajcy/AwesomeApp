@@ -19,6 +19,6 @@ namespace AwesomeApp.WebAPI.Models
         {
         }
 
-        public System.Data.Entity.DbSet<AwesomeApp.WebAPI.Models.Todo> Todoes { get; set; }
+        public DbSet<Todo> Todoes { get; set; }
     }
 }

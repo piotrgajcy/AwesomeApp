@@ -16,7 +16,7 @@ namespace AwesomeApp.WebAPI.App_Start
             CreateMap<TodoDto, Todo>();
 
             CreateMap<TodoDto, Todo>()
-                .ForMember(c => c.Id, opt => opt.Ignore());
+                .ForMember(c => c.ID, opt => opt.Ignore());
         }
     }
 }

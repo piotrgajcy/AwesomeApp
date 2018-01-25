@@ -7,13 +7,13 @@ namespace AwesomeApp.WebAPI.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddedNullHandlingToDateTime : IMigrationMetadata
+    public sealed partial class RenameTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedNullHandlingToDateTime));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RenameTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201801232128594_AddedNullHandlingToDateTime"; }
+            get { return "201801252128402_RenameTable"; }
         }
         
         string IMigrationMetadata.Source

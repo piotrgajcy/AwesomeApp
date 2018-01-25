@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -9,7 +10,8 @@ namespace AwesomeApp.WebAPI.Dtos
 {
     public class TodoDto
     {
-        public int Id { get; set; }
+        
+        public int ID { get; set; }
 
         [JsonProperty(PropertyName = "title")]
         [StringLength(250), Required]

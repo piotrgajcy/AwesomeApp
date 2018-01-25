@@ -92,7 +92,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\MappingProfile.cs" />
@@ -102,17 +104,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801212142530_InitialModel.cs" />
-    <Compile Include="Migrations\201801212142530_InitialModel.Designer.cs">
-      <DependentUpon>201801212142530_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\201801242342350_Initial.cs" />
+    <Compile Include="Migrations\201801242342350_Initial.Designer.cs">
+      <DependentUpon>201801242342350_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801232128594_AddedNullHandlingToDateTime.cs" />
-    <Compile Include="Migrations\201801232128594_AddedNullHandlingToDateTime.Designer.cs">
-      <DependentUpon>201801232128594_AddedNullHandlingToDateTime.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801232209408_ConvertIdByteToInt.cs" />
-    <Compile Include="Migrations\201801232209408_ConvertIdByteToInt.Designer.cs">
-      <DependentUpon>201801232209408_ConvertIdByteToInt.cs</DependentUpon>
+    <Compile Include="Migrations\201801252128402_RenameTable.cs" />
+    <Compile Include="Migrations\201801252128402_RenameTable.Designer.cs">
+      <DependentUpon>201801252128402_RenameTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AwesomeAppWebAPIContext.cs" />
@@ -132,14 +130,11 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801212142530_InitialModel.resx">
-      <DependentUpon>201801212142530_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801242342350_Initial.resx">
+      <DependentUpon>201801242342350_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801232128594_AddedNullHandlingToDateTime.resx">
-      <DependentUpon>201801232128594_AddedNullHandlingToDateTime.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801232209408_ConvertIdByteToInt.resx">
-      <DependentUpon>201801232209408_ConvertIdByteToInt.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801252128402_RenameTable.resx">
+      <DependentUpon>201801252128402_RenameTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
