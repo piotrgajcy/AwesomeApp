@@ -41,19 +41,22 @@ namespace AwesomeApp.WebAPI.Controllers
 
         // PUT: api/Todos/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutTodo(int id, Todo todo)
+        public async Task<IHttpActionResult> PutTodo(int id, TodoDto todoDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != todo.ID)
+            if (id != todoDto.ID)
             {
                 return BadRequest();
             }
+            var todoInDb = db.Todoes.SingleOrDefault(t => t.ID == id);
 
-            db.Entry(todo).State = EntityState.Modified;
+            Mapper.Map(todoDto, todoInDb);
+
+            //db.Entry(todoDto).State = EntityState.Modified;
 
             try
             {
