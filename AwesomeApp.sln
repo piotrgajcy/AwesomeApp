@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeApp.WebAPI", "Awesom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeApp.ReactApp", "AwesomeApp.ReactApp\AwesomeApp.ReactApp.csproj", "{A12DA09E-7D73-4FFD-BFE7-2758845F2A4A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeApp.VueApp", "AwesomeApp.VueApp\AwesomeApp.VueApp.csproj", "{BC118608-40FE-47A1-97A7-F68C6327F861}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A12DA09E-7D73-4FFD-BFE7-2758845F2A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A12DA09E-7D73-4FFD-BFE7-2758845F2A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A12DA09E-7D73-4FFD-BFE7-2758845F2A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC118608-40FE-47A1-97A7-F68C6327F861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC118608-40FE-47A1-97A7-F68C6327F861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC118608-40FE-47A1-97A7-F68C6327F861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC118608-40FE-47A1-97A7-F68C6327F861}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
