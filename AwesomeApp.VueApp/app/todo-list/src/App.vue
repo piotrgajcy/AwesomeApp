@@ -1,6 +1,14 @@
 <template>
-  <div id="app">    
-    <TodoList/>
+  <div id="app">
+    <v-app>
+    <v-content>
+      <v-container fluid>
+            <TodoList/>
+      </v-container>
+    </v-content>
+    <v-footer app></v-footer>
+  </v-app>    
+
   </div>
 </template>
 
