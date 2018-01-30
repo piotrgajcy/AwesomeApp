@@ -3,7 +3,8 @@
     <v-app>
     <v-content>
       <v-container fluid>
-            <TodoList/>
+          <AddItem/>
+          <TodoList/>
       </v-container>
     </v-content>
     <v-footer app></v-footer>
@@ -14,11 +15,13 @@
 
 <script>
 import TodoList from './components/TodoList'
+import AddItem from './components/AddItem'
 
 export default {
   name: 'App',
   components: {
-    TodoList
+    TodoList,
+    AddItem
   },
   mounted: function () {
     this.$store.dispatch('LoadTodoList')
