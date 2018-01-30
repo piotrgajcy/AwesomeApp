@@ -22,12 +22,6 @@
       </v-card>
     </v-flex>
   </v-layout>
-
-
-
-  <!-- <ul>
-    <li v-for="item in todoItems" :key="item.id"> {{item.title}} - {{item.description}} </li>
-  </ul> -->
 </template>
 
 <script>
