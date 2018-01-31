@@ -18,7 +18,7 @@ class AddTask extends Component {
       // description: this.state.description,
       title: "dsadadsa",
       dateAdded: "",
-      description: "",
+      description: "jkjf",
       isCompleted: false,
     
     }
