@@ -7,6 +7,7 @@ import ToDoCard from '../../components/ToDoCards/ToDoCard/ToDoCard';
 class ToDoCards extends Component {
   state = {
     tasks: [],
+    selectTaskId: null,
     error: false
   }
   
@@ -22,9 +23,13 @@ class ToDoCards extends Component {
       console.log(error);
     })
   }
-  // shouldComponentUpdate (nextProps, nextState) {
-  //   return nextProps.tasks !== this.props.tasks;
-  // }
+  
+  deleteTaskHandler = (key) => {
+    axios.delete('http://localhost:59967/api/todos/' + key)
+      .then(response => {
+        console.log(response);
+      });
+  }
 
   render () {
     let tasks = this.state.tasks.map(task => {
@@ -32,7 +37,8 @@ class ToDoCards extends Component {
               title={task.title}
               description={task.description}
               status={task.isCompleted}
-              key={task.id} />
+              key={task.id} 
+              clicked={(key) => this.deleteTaskHandler(task.id)} />
     });
 
     return (
