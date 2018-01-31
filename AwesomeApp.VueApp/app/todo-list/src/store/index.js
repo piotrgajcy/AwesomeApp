@@ -22,7 +22,14 @@ const store = new Vuex.Store({
       }, (err) => {
         console.log(err);
       });
-    }     
+    },
+    DeleteTodo: function({commit}, todoItemId)  {
+      axios.delete('http://localhost:59967/api/todos/' + todoItemId).then((response) => {
+        commit('DeleteTodoFromList', {todo: response.data})
+      }, (err) => {
+        console.log(err);
+      });
+    }   
   },
   mutations: {
     SetTodoList: (state, {todoList}) => {
@@ -30,6 +37,14 @@ const store = new Vuex.Store({
     },
     AddTodo: (state, {todo}) => {
       state.todoItems.push(todo)
+    },
+    DeleteTodoFromList: (state, {todo}) => {
+      const arr = state.todoItems;
+      const index = arr.map((item, index) => {
+        if (item.id === todo.id) {
+          arr.splice(index, 1);
+        }
+      })      
     }
   }
 });
