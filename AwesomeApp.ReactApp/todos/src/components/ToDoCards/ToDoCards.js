@@ -15,8 +15,9 @@ class ToDoCards extends Component {
     axios.get('http://localhost:59967/api/todos')
     .then(response => {
       const tasks = response.data;
-      const updateTasks = tasks.reverse();
+      const updateTasks = tasks//.reverse();
       this.setState({tasks: updateTasks});
+      console.log(tasks)
     })
     .catch(error => {
       this.setState({error: true});
@@ -24,21 +25,24 @@ class ToDoCards extends Component {
     })
   }
   
-  deleteTaskHandler = (key) => {
-    axios.delete('http://localhost:59967/api/todos/' + key)
+  deleteTaskHandler = (id) => {
+    axios.delete('http://localhost:59967/api/todos/' + id)
       .then(response => {
         console.log(response);
       });
   }
 
   render () {
+    let countId = 0;
     let tasks = this.state.tasks.map(task => {
+      countId++;
       return <ToDoCard 
               title={task.title}
               description={task.description}
               status={task.isCompleted}
+              id={countId}
               key={task.id} 
-              clicked={(key) => this.deleteTaskHandler(task.id)} />
+              clicked={(id) => this.deleteTaskHandler(task.id)} />
     });
 
     return (
