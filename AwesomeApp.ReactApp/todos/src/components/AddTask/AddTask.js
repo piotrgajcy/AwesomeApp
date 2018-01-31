@@ -27,7 +27,7 @@ class AddTask extends Component {
       }
     })
     .then(response => {
-      console.log(JSON.stringify(data));
+      //console.log(JSON.stringify(data));
       this.setState({
         dateAdded: '',
         description: '',
