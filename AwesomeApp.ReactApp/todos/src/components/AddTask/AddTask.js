@@ -7,35 +7,38 @@ class AddTask extends Component {
   state = {
     dateAdded: '',
     description: '',
-    id: 2,
+    id: '',
     isCompleted: false,
-    title: 'test'
+    title: ''
   }
 
   postDataHandler = () => {
     const data = {
-      // title: this.state.title,
-      // description: this.state.description,
-      title: "dsadadsa",
-      dateAdded: "",
-      description: "jkjf",
-      isCompleted: false,
-    
+      title: this.state.title,
+      dateAdded: this.state.dateAdded,
+      description: this.state.description,
+      isCompleted: this.state.isCompleted,
     }
+
     axios.post('http://localhost:59967/api/todos', data, 
     {
       headers: {
         'Content-Type': 'application/json'
       }
-    }
-    //JSON.stringify(data)
-  )
-      .then(response => {
-        console.log(JSON.stringify(data));
+    })
+    .then(response => {
+      console.log(JSON.stringify(data));
+      this.setState({
+        dateAdded: '',
+        description: '',
+        id: '',
+        isCompleted: false,
+        title: ''
       })
-      .catch(error => {
-        console.log(error, JSON.stringify(data));
-      });
+    })
+    .catch(error => {
+      console.log(error, JSON.stringify(data));
+    });
   }
 
   render () {
