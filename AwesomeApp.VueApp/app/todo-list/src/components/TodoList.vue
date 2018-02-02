@@ -1,3 +1,4 @@
+
 <template>
   <v-layout row>
     <v-flex xs12 sm6 offset-sm3>
@@ -10,12 +11,13 @@
             <v-list-tile              
               @click="toggle(index)"
               :key="item.id"
+              @mouseover="active = item" @mouseleave="active = null"            
             >
               <v-list-tile-content>
                 <v-list-tile-title>{{ item.title }}</v-list-tile-title>
                 <v-list-tile-sub-title class="grey--text text--darken-4">{{ item.description }}</v-list-tile-sub-title>                
               </v-list-tile-content>
-              <DeleteItem :id='item.id'/>
+              <DeleteItem v-if="active === item" :id='item.id' />
             </v-list-tile>
           </template>
         </v-list>
@@ -32,6 +34,9 @@ export default {
   name: 'todoList',
   components: {
     DeleteItem
+  },
+  data: function() {
+    return {active: null}
   },
   computed: {
     todoItems () {
